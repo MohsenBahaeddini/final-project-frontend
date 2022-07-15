@@ -28,7 +28,7 @@ const AdDetails = () => {
   const { id } = useParams();
   // Get the specific ad by Id
   useEffect(() => {
-    fetch(`/api/ad/${id}`)
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ad/${id}`)
       .then((res) => res.json())
       .then((response) => {
         setAd(response.ad);
@@ -44,7 +44,7 @@ const AdDetails = () => {
   // console.log(currentUser);
   useEffect(() => {
     if (currentUser) {
-      fetch(`/api/saved-ads-by-user/${currentUser.sub}`)
+      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${currentUser.sub}`)
         .then((res) => res.json())
         .then((response) => {
           // console.log(response.savedAds);
@@ -70,7 +70,7 @@ const AdDetails = () => {
   const handleSaveButton = () => {
     if (!isSaved) {
       // setIsSaved(true);
-      fetch("/api/new-saved-ad", {
+      fetch("https://auto-explorer-backend.herokuapp.com/api/new-saved-ad", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -88,7 +88,7 @@ const AdDetails = () => {
         });
     } else {
       // setIsSaved(false);
-      fetch(`/api/delete-saved-ad/${id}`, {
+      fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -103,7 +103,7 @@ const AdDetails = () => {
   const sendMessage = (ev) => {
     ev.preventDefault();
     if (msg) {
-      fetch("/api/new-conversation", {
+      fetch("https://auto-explorer-backend.herokuapp.com/api/new-conversation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
