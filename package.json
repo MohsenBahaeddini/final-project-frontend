@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://auto-explorer-backend.herokuapp.com/api",
+  
   "engines": {
     "node": "17.7.2"
   },

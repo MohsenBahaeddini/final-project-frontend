@@ -25,12 +25,15 @@ const SmallAd = ({ filters, sort, make, year, type, model }) => {
   const fetchAds = async () => {
     try {
       setLoading("loading");
-      await fetch(`/api/ads?page=${pageNum}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
+      await fetch(
+        `https://auto-explorer-backend.herokuapp.com/api/ads?page=${pageNum}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((response) => {
           setAds(response.ads);
