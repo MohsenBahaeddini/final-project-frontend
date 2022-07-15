@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://auto-explorer-backend.herokuapp.com/",
+  "engines": {
+    "node": "17.7.2"
+  },
   "dependencies": {
     "@auth0/auth0-react": "^1.10.1",
     "@cloudinary/react": "^1.4.1",
