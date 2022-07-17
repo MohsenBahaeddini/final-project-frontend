@@ -8,7 +8,7 @@ const ConversationDetails = ({ conversationId, sellerName, adsId }) => {
 
   useEffect(() => {
     setStatus("loading");
-    fetch(`/api/ad/${adsId}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ad/${adsId}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

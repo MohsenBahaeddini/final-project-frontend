@@ -8,7 +8,7 @@ const SavedAdDetails = ({ adId, userId, updateMySavedAdsAfterDelete }) => {
   const [status, setStatus] = useState("loading");
   const [error, setError] = useState(false);
   useEffect(() => {
-    fetch(`/api/ad/${adId}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ad/${adId}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -63,7 +63,7 @@ const SavedAdDetails = ({ adId, userId, updateMySavedAdsAfterDelete }) => {
               <Button
                 onClick={(ev) => {
                   ev.preventDefault();
-                  fetch(`/api/delete-saved-ad/${savedAd._id}`, {
+                  fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${savedAd._id}`, {
                     method: "DELETE",
                   })
                     .then((res) => res.json())

@@ -21,12 +21,16 @@ const MyConversations = () => {
 
   // Get all my conversations as buyer
   useEffect(() => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversations-by-buyers/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    setStatus("loading");
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversations-by-buyers/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setConversations(response.conversations);

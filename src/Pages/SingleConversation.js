@@ -19,7 +19,7 @@ const SingleConversation = () => {
 
   // Get a specific conversation by id
   useEffect(() => {
-    fetch(`/api/conversation-by-id/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -38,7 +38,7 @@ const SingleConversation = () => {
 
   // refetch to re-render the conversation after a new message has been sent
   const handleAfterSendMsg = () => {
-    fetch(`/api/conversation-by-id/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

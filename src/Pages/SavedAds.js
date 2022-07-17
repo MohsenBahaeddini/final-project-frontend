@@ -17,7 +17,7 @@ const SavedAds = ({ user }) => {
   const { id } = useParams();
   useEffect(() => {
     {
-      fetch(`/api/saved-ads-by-user/${id}`, {
+      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -37,7 +37,7 @@ const SavedAds = ({ user }) => {
   console.log(savedAds);
   const updateMySavedAdsAfterDelete = () => {
     {
-      fetch(`/api/saved-ads-by-user/${id}`, {
+      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",

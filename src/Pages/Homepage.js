@@ -56,7 +56,7 @@ const Homepage = () => {
   const addNewUser = async () => {
     if (isAuthenticated) {
       try {
-        await fetch("/api/new-user", {
+        await fetch("https://auto-explorer-backend.herokuapp.com/api/new-user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
