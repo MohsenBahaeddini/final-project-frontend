@@ -56,7 +56,7 @@ const PostAd = () => {
     ev.preventDefault();
 
     if (make && type && year && model && mileage && price && description) {
-      fetch("/api/new-ad", {
+      fetch("https://auto-explorer-backend.herokuapp.com/api/new-ad", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

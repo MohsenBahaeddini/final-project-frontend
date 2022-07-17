@@ -25,7 +25,7 @@ const MyMessages = () => {
 
   // get the messages that owner has received for a specific ad
   useEffect(() => {
-    fetch(`/api/conversations-by-ad/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversations-by-ad/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -44,7 +44,7 @@ const MyMessages = () => {
 
   // Get conversation by id
   useEffect(() => {
-    fetch(`/api/conversation-by-id/${chatId}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -63,7 +63,7 @@ const MyMessages = () => {
 
   // re-fetch messages once the new msg has been sent and dispaly on screen
   const handleAfterSendMsg = () => {
-    fetch(`/api/conversation-by-id/${chatId}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -106,7 +106,7 @@ const MyMessages = () => {
                       onClick={(ev) => {
                         console.log(ev);
                         ev.preventDefault();
-                        fetch(`/api/conversation-by-id/${conversation._id}`, {
+                        fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${conversation._id}`, {
                           headers: {
                             "Content-Type": "application/json",
                             Accept: "application/json",
@@ -195,7 +195,7 @@ const MyMessages = () => {
                     ev.preventDefault();
 
                     if (msg) {
-                      fetch(`/api/update-conversation/${chat._id}`, {
+                      fetch(`https://auto-explorer-backend.herokuapp.com/api/update-conversation/${chat._id}`, {
                         method: "PATCH",
                         headers: {
                           "Content-Type": "application/json",

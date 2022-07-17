@@ -17,7 +17,7 @@ const MyAd = ({ currentUser }) => {
   // Get all my ads
   useEffect(() => {
     setStatus("loading");
-    fetch(`/api/ads-by-owner/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -35,7 +35,7 @@ const MyAd = ({ currentUser }) => {
   }, []);
 
   const updateMyAdsAfterDelete = () => {
-    fetch(`/api/ads-by-owner/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -82,7 +82,7 @@ const MyAd = ({ currentUser }) => {
                         <Button
                           onClick={(ev) => {
                             ev.preventDefault();
-                            fetch(`/api/delete-ad/${ad._id}`, {
+                            fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-ad/${ad._id}`, {
                               method: "DELETE",
                             })
                               .then((res) => res.json())

@@ -21,7 +21,7 @@ const MyConversations = () => {
 
   // Get all my conversations as buyer
   useEffect(() => {
-    fetch(`/api/conversations-by-buyers/${id}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversations-by-buyers/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -39,7 +39,7 @@ const MyConversations = () => {
   }, []);
   let adsId;
   const sellersAd = () => {
-    fetch(`/api/ad/${adsId}`, {
+    fetch(`https://auto-explorer-backend.herokuapp.com/api/ad/${adsId}`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
