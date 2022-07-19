@@ -346,7 +346,7 @@ const Container = styled.div`
     max-width: 550px;
   }
   @media (max-width: 550px) {
-    min-width: 460px;
+    min-width: 458px;
     /* max-width: 350px; */
   }
 `;
