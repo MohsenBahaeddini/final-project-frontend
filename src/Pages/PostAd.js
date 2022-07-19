@@ -111,7 +111,7 @@ const PostAd = () => {
                   Select Type
                 </Option>
                 {types.map((el) => {
-                  return <option value={el}>{el}</option>;
+                  return <Option value={el}>{el}</Option>;
                 })}
               </Select1>
               <Select1
@@ -120,13 +120,13 @@ const PostAd = () => {
                   setMake(ev.target.value);
                 }}
               >
-                <option value={"default"} disabled>
+                <Option value={"default"} disabled>
                   Select Make
-                </option>
+                </Option>
                 {makes.map((make) => {
                   return (
                     <>
-                      <option value={make}>{make}</option>
+                      <Option value={make}>{make}</Option>
                     </>
                   );
                 })}
@@ -137,11 +137,11 @@ const PostAd = () => {
                   setYear(ev.target.value);
                 }}
               >
-                <option value={"default"} disabled>
+                <Option value={"default"} disabled>
                   Select Year
-                </option>
+                </Option>
                 {years.map((year) => {
-                  return <option value={year}>{year}</option>;
+                  return <Option value={year}>{year}</Option>;
                 })}
               </Select1>
               <Select1
@@ -150,14 +150,14 @@ const PostAd = () => {
                   setModel(ev.target.value);
                 }}
               >
-                <option value={"default"} disabled>
+                <Option value={"default"} disabled>
                   Select Model
-                </option>
+                </Option>
                 {cars.length &&
                   cars.map((car, index) => (
-                    <option key={index} value={car.model}>
+                    <Option key={index} value={car.model}>
                       {car.model}
-                    </option>
+                    </Option>
                   ))}
               </Select1>
               <Input
@@ -350,7 +350,11 @@ const Options = styled.div`
     align-items: flex-start;
   }
 `;
-const option = styled.option``;
+const Option = styled.option`
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+`;
 const H3 = styled.h3`
   margin-bottom: 30px;
   font-size: 18px;
