@@ -107,9 +107,9 @@ const PostAd = () => {
                   setType(ev.target.value);
                 }}
               >
-                <option value={"default"} disabled>
+                <Option value={"default"} disabled>
                   Select Type
-                </option>
+                </Option>
                 {types.map((el) => {
                   return <option value={el}>{el}</option>;
                 })}
@@ -350,6 +350,7 @@ const Options = styled.div`
     align-items: flex-start;
   }
 `;
+const option = styled.option``;
 const H3 = styled.h3`
   margin-bottom: 30px;
   font-size: 18px;
@@ -419,6 +420,8 @@ const Select1 = styled.select`
   margin-top: 5px;
   @media (max-width: 600px) {
     width: 280px;
+    font-size: 14px;
+    font-weight: bold;
   }
 `;
 const Label = styled.label`
