@@ -27,7 +27,7 @@ const Item = styled.div`
   display: inline-block;
   background-color: #222533;
   padding: 2px;
-  margin: 10px 0px 10px 80px;
+  margin: 10px 0px 10px 9px;
   border: 1px solid #ddd;
   border: 1px solid var(--color-blue);
   border-radius: 10px;

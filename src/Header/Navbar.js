@@ -43,19 +43,22 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   text-align: right;
-  flex-basis: 33%;
+  flex-basis: 60%;
 `;
 const Button = styled.button`
   background: none;
   cursor: pointer;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   /* width: 0px;
   height: 25px; */
   &:hover {
     color: var(--color-blue);
     // text-decoration: underline;
+  }
+  @media (max-width: 735px) {
+    font-size: 12px;
   }
 `;
 const StyledLink = styled(Link)`
@@ -76,12 +79,15 @@ const Logo = styled.h2`
   color: var(--color-yellow);
   font-size: 22px;
   flex-basis: 33%;
+  @media (max-width: 735px) {
+    font-size: 16px;
+  }
 `;
 const StyledNavLink = styled(NavLink)`
   color: #fff;
   margin-left: 10px;
   /* font-family: var(--font-body); */
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   outline: none;
 
@@ -92,6 +98,9 @@ const StyledNavLink = styled(NavLink)`
     color: var(--color-yellow);
 
     border: none;
+  }
+  @media (max-width: 735px) {
+    font-size: 12px;
   }
 `;
 

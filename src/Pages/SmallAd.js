@@ -133,6 +133,11 @@ const FilterErr = styled.h1`
 `;
 const Main = styled.div``;
 
-const ItemContainer = styled.div``;
+const ItemContainer = styled.div`
+ display: grid;
+  grid-template-columns: repeat(auto-fit, 315px);
+  gap: 50px;
+  justify-content: center;
+  margin-top: 50px;`;
 
 export default SmallAd;

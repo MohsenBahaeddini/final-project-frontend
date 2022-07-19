@@ -50,6 +50,14 @@ const Img = styled.img`
   padding: 2px;
   border-radius: 10px;
   border: 2px solid var(--color-blue);
+  @media (max-width: 720px) {
+    width: 550px;
+    height: 350px;
+  }
+  @media (max-width: 550px) {
+    width: 350px;
+    height: 250px;
+  }
 `;
 const Button = styled.button`
   margin: -360px 0 0 0;

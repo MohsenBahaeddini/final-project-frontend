@@ -317,6 +317,11 @@ const Wrapper = styled.div`
   display: flex;
   margin: 80px;
   max-height: 500px;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Container = styled.div`
   display: flex;
@@ -325,12 +330,21 @@ const Container = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   background: var(--color-darkGrey);
-  margin: 0 40px;
-  min-width: 500px;
+  margin: 0 22.5px;
+  min-width: 550px;
   justify-content: space-between;
+  @media (max-width: 720px) {
+    min-width: 550px;
+    max-width: 550px;
+  }
+  @media (max-width: 550px) {
+    min-width: 350px;
+    max-width: 350px;
+  }
 `;
 const SliderDiv = styled.div`
   position: relative;
+  margin-bottom: 40px;
 `;
 const SaveBtnDiv = styled.div`
   display: flex;
@@ -339,6 +353,15 @@ const SaveBtnDiv = styled.div`
   position: absolute;
   left: 610px;
   bottom: 10px;
+  bottom: 70px;
+
+  @media (max-width: 720px) {
+    left: 510px;
+  }
+  @media (max-width: 550px) {
+    left: 310px;
+    /* bottom: 120px; */
+  }
 `;
 const SaveBtn = styled.button`
   background: none;

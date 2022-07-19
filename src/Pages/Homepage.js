@@ -85,8 +85,8 @@ const Homepage = () => {
   return (
     <>
       <Wrapper>
-        <CoverTextBox></CoverTextBox>
-        <RightCoverBox></RightCoverBox>
+        {/* <CoverTextBox></CoverTextBox>
+        <RightCoverBox></RightCoverBox> */}
         <CoverDiv>
           <CoverImg src={background} />
         </CoverDiv>
@@ -198,16 +198,18 @@ const Wrapper = styled.div`
 const CoverDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 150px;
-  margin-bottom: -20px;
+  margin-top: 30px;
+  /* margin-bottom: -20px; */
   height: 140px;
-  width: 100%;
+  /* width: 100%; */
   background-color: var(--color-dark-blue);
 `;
 const CoverImg = styled.img`
   /* width: 600px;
   height: 300px; */
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-dark-blue);@media (max-width: 735px) {
+    width: 70vw;
+  }
 `;
 const CoverTextBox = styled.div`
   display: flex;
@@ -243,12 +245,30 @@ const FiltersDiv = styled.div`
   justify-content: center;
   width: 700px;
   height: 70px;
+  @media (max-width: 735px) {
+    display: flex;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 70px;
+  }
 `;
 const Select = styled.select`
   font-size: 14px;
   padding: 5px 20px;
   margin: 5px;
   cursor: pointer;
+  @media (max-width: 735px) {
+    font-size: 14px;
+    padding: 5px 20px;
+    margin: 5px;
+    width: 80vw;
+  }
 `;
 
 export default Homepage;
