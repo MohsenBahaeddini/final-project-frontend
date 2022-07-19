@@ -351,8 +351,12 @@ const Options = styled.div`
   }
 `;
 const Option = styled.option`
-  @media (max-width: 600px) {
+  @media (max-width: 1100px) {
     font-size: 14px;
+    font-weight: bold;
+  }
+  @media (max-width: 600px) {
+    width: 280px;
   }
 `;
 const H3 = styled.h3`
@@ -375,6 +379,10 @@ const Input = styled.input`
   margin-top: 5px;
   border: none;
   border-radius: 2px;
+  @media (max-width: 1100px) {
+    font-size: 14px;
+    font-weight: bold;
+  }
   @media (max-width: 600px) {
     width: 280px;
   }
@@ -422,10 +430,12 @@ const TextArea = styled.textarea`
 const Select1 = styled.select`
   padding: 5px;
   margin-top: 5px;
-  @media (max-width: 600px) {
-    width: 280px;
+  @media (max-width: 1100px) {
     font-size: 14px;
     font-weight: bold;
+  }
+  @media (max-width: 600px) {
+    width: 280px;
   }
 `;
 const Label = styled.label`
