@@ -9,37 +9,37 @@ const Profile = () => {
   const { user, isAuthenticated } = useAuth0();
   const { currentUser } = useContext(CurrentUserContext);
 
-  
   return (
     <>
       {isAuthenticated && (
         <Div>
           <Wrapper>
-            <Div2>
-              <AccProfile>
-                <Title>Account Profile</Title>
+            {/* <Div2> */}
+            <AccProfile>
+              <Title>Account Profile</Title>
+              <div>
                 <div>
-                  <div>
-                    <El>
-                      <H3>First name</H3>
-                      <H4>{user.given_name}</H4>
-                    </El>
-                    <El>
-                      <H3>Last name</H3>
-                      <H4>{user.family_name}</H4>
-                    </El>
-                    <El>
-                      <Email>Email</Email>
-                      <H4>{user.email}</H4>
-                    </El>
-                  </div>
+                  <El>
+                    <H3>First name</H3>
+                    <H4>{user.given_name}</H4>
+                  </El>
+                  <El>
+                    <H3>Last name</H3>
+                    <H4>{user.family_name}</H4>
+                  </El>
+                  <El>
+                    <Email>Email</Email>
+                    <H4>{user.email}</H4>
+                  </El>
                 </div>
-                {/* <Button>Edit</Button> */}
-              </AccProfile>
-              <SavedAds user={currentUser} />
-            </Div2>
+              </div>
+              {/* <Button>Edit</Button> */}
+            </AccProfile>
+
+            {/* </Div2> */}
             <MyAd currentUser={currentUser} />
             <MyConversations />
+            <SavedAds user={currentUser} />
           </Wrapper>
           {/* <SavedAdsWrapper> */}
 
@@ -50,13 +50,21 @@ const Profile = () => {
   );
 };
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+   display: grid;
+  grid-template-columns: repeat(auto-fit, 370px);
+  justify-content: flex-start;
+  gap: 5%;
+  row-gap: 1%;
   margin: 20px 40px;
   position: relative;
-  /* 
-   */
-  /* margin: 30px; */
+  @media (max-width: 1350px) {
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 50px 20px 0px;
+  }
+  @media (max-width: 420px) {
+    margin-left: 70px;
+  }
 `;
 const Div2 = styled.div``;
 const SavedAdsWrapper = styled.div`
@@ -74,10 +82,14 @@ const AccProfile = styled.div`
   background: var(--color-darkGrey);
   margin: 10px;
   padding-bottom: 10px;
-  min-width: calc(100vw / 3.5);
+  min-width: 402px;
+  width: 402px;
   min-height: 250px;
   height: fit-content;
-  /* box-sizing: content-box; */
+  @media (max-width: 420px) {
+    min-width: 330px;
+    width: 330px;
+  }
 `;
 const Title = styled.h2`
   border-bottom: 1px solid var(--color-blue);

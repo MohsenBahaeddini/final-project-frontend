@@ -94,15 +94,43 @@ const MyConversations = () => {
   );
 };
 const Wrapper = styled.div`
-  min-width: calc(100vw / 3.5);
+  width: 402px;
+  min-width: 402px;
   border: 1px solid #ddd;
   border-radius: 10px;
   margin: 10px;
   min-height: 250px;
   height: fit-content;
-  max-height: 550px;
+  /* max-height: 550px; */
   background: var(--color-darkGrey);
   padding-bottom: 5px;
+  max-height: 250px;
+  @media (max-width: 420px) {
+    min-width: 330px;
+    width: 330px;
+  }
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #bbbbbb;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #3d4247;
+  }
 `;
 const Div = styled.div`
   display: flex;

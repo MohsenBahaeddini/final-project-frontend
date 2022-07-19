@@ -17,12 +17,15 @@ const SavedAds = ({ user }) => {
   const { id } = useParams();
   useEffect(() => {
     {
-      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
+      fetch(
+        `https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((response) => {
           setSavedAds(response.savedAds);
@@ -37,12 +40,15 @@ const SavedAds = ({ user }) => {
   console.log(savedAds);
   const updateMySavedAdsAfterDelete = () => {
     {
-      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`, {
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      })
+      fetch(
+        `https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      )
         .then((res) => res.json())
         .then((response) => {
           setSavedAds(response.savedAds);
@@ -83,14 +89,42 @@ const SavedAds = ({ user }) => {
   );
 };
 const Wrapper = styled.div`
-  min-width: calc(100vw / 4.5);
+  width: 402px;
+  min-width: 402px;
   border: 1px solid #ddd;
   border-radius: 10px;
   margin: 10px;
-  min-height: 230px;
+  min-height: 250px;
   height: fit-content;
   background: var(--color-darkGrey);
   padding-bottom: 5px;
+  @media (max-width: 420px) {
+    min-width: 330px;
+    width: 330px;
+  }
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #bbbbbb;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #3d4247;
+  }
 `;
 const Div = styled.div`
   display: flex;

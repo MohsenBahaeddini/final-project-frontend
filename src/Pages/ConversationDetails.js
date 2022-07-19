@@ -34,7 +34,7 @@ const ConversationDetails = ({ conversationId, sellerName, adsId }) => {
         <>
           <Div2>
             <StyledNavLink to={`/conversation/${conversationId}`}>
-              <Span>Message {sellerName}</Span>
+              <Span>{sellerName}</Span>
             </StyledNavLink>
             <H2>
               {ads.year} {ads.type} {ads.make} {ads.model}
