@@ -22,7 +22,7 @@ const Navbar = () => {
                 My Account
               </StyledNavLink>
               <StyledNavLink to="/post-ad">Post Ad</StyledNavLink>
-              <Button onClick={() => logout()}>Log out</Button>
+              <Button onClick={() => logout()}>Log Out</Button>
             </>
           )}
           {!isAuthenticated && (

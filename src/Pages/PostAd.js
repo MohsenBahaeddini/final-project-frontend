@@ -96,7 +96,7 @@ const PostAd = () => {
           <H1>Post Ad</H1>
         </Div>
         <Section>
-          <Div>
+          <FormDiv>
             <Form onSubmit={handleSubmit}>
               <H3>Enter Your Car Info</H3>
               <Select1
@@ -258,7 +258,7 @@ const PostAd = () => {
                 Post My Ad
               </Button>
             </Form>
-          </Div>
+          </FormDiv>
           <Div2>
             <H3>Showcase the beauty of your car</H3>
             <Img src={uploadImage} />
@@ -281,16 +281,35 @@ const Wrapper = styled.div`
 const H1 = styled.h1`
   font-size: 20px;
   color: #fff;
+  @media (max-width: 600px) {
+    font-size: 19px;
+  }
 `;
 const Section = styled.section`
   display: flex;
   justify-content: space-evenly;
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  @media (max-width: 600px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
-
+const FormDiv = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 20px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+`;
 const Div = styled.div`
   display: flex;
   justify-content: left;
@@ -326,20 +345,34 @@ const Options = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 const H3 = styled.h3`
   margin-bottom: 30px;
   font-size: 18px;
   color: #fff;
+  @media (max-width: 600px) {
+    font-size: 16px;
+  }
 `;
 const Img = styled.img`
   width: 380px;
   height: 330px;
+  @media (max-width: 600px) {
+    width: 280px;
+    height: 230px;
+  }
 `;
 const Input = styled.input`
   margin-top: 5px;
   border: none;
   border-radius: 2px;
+  @media (max-width: 600px) {
+    width: 280px;
+  }
 `;
 const Button = styled.button`
   color: var(--color-darkGrey);
@@ -349,7 +382,8 @@ const Button = styled.button`
   cursor: pointer;
   border-radius: 2px;
   border: 1px solid #fff;
-
+  padding: 5px 20px;
+  width: 500px;
   &:disabled {
     background-color: grey;
     border: 1px solid grey;
@@ -361,6 +395,11 @@ const Button = styled.button`
     border-radius: 2px;
     border: 1px solid #fff;
   }
+  @media (max-width: 600px) {
+    width: 280px;
+    font-size: 14px;
+    font-weight: bold;
+  }
 `;
 const TextArea = styled.textarea`
   padding-bottom: 30px;
@@ -371,12 +410,22 @@ const TextArea = styled.textarea`
   border: none;
   border-radius: 2px;
   outline: none;
+  @media (max-width: 600px) {
+    width: 280px;
+  }
 `;
 const Select1 = styled.select`
   padding: 5px;
   margin-top: 5px;
+  @media (max-width: 600px) {
+    width: 280px;
+  }
 `;
 const Label = styled.label`
   color: #fff;
+  @media (max-width: 600px) {
+    font-size: 14px;
+    font-weight: bold;
+  }
 `;
 export default PostAd;
