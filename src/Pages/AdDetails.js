@@ -346,14 +346,15 @@ const Container = styled.div`
     max-width: 550px;
   }
   @media (max-width: 550px) {
-    min-width: 458px;
-    /* max-width: 350px; */
+    min-width: 380px;
+    max-width: 380px;
   }
 `;
 const SliderDiv = styled.div`
   position: relative;
   margin-bottom: 40px;
-  @media (max-width: 750px) {
+
+  @media (max-width: 1300px) {
     margin-top: 200px;
   }
 `;
@@ -402,7 +403,7 @@ const Div3 = styled.div`
 const Div4 = styled.div`
   display: flex;
   flex-direction: column;
-  padding-right: 70px;
+  padding-right: 20px;
 `;
 const H1 = styled.h1`
   display: flex;
