@@ -354,7 +354,7 @@ const SliderDiv = styled.div`
   position: relative;
   margin-bottom: 40px;
   @media (max-width: 750px) {
-    margin-top: 100px;
+    margin-top: 200px;
   }
 `;
 const SaveBtnDiv = styled.div`
