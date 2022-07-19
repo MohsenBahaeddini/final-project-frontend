@@ -44,7 +44,9 @@ const AdDetails = () => {
   // console.log(currentUser);
   useEffect(() => {
     if (currentUser) {
-      fetch(`https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${currentUser.sub}`)
+      fetch(
+        `https://auto-explorer-backend.herokuapp.com/api/saved-ads-by-user/${currentUser.sub}`
+      )
         .then((res) => res.json())
         .then((response) => {
           // console.log(response.savedAds);
@@ -54,7 +56,7 @@ const AdDetails = () => {
     }
   }, [savedAds, isSaved, currentUser]);
 
-  console.log("$$$$$$$$$ isSaved: ", isSaved);
+  // console.log("$$$$$$$$$ isSaved: ", isSaved);
   let found;
   if (savedAds) {
     found = savedAds.find((element) => element._id === id);
@@ -88,9 +90,12 @@ const AdDetails = () => {
         });
     } else {
       // setIsSaved(false);
-      fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((response) => {
           console.log(response);
@@ -103,26 +108,29 @@ const AdDetails = () => {
   const sendMessage = (ev) => {
     ev.preventDefault();
     if (msg) {
-      fetch("https://auto-explorer-backend.herokuapp.com/api/new-conversation", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          messages: [
-            {
-              user: currentUser.email,
-              body: msg,
-              date: moment().format("h:mm A - MMMM Do, YYYY"),
-            },
-          ],
-          buyer: currentUser.email,
-          buyerId: currentUser.sub,
-          seller: ad.owner,
-          adId: id,
-        }),
-      })
+      fetch(
+        "https://auto-explorer-backend.herokuapp.com/api/new-conversation",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            messages: [
+              {
+                user: currentUser.email,
+                body: msg,
+                date: moment().format("h:mm A - MMMM Do, YYYY"),
+              },
+            ],
+            buyer: currentUser.email,
+            buyerId: currentUser.sub,
+            seller: ad.owner,
+            adId: id,
+          }),
+        }
+      )
         .then((res) => res.json())
         .then((response) => {
           if (response) {
@@ -345,6 +353,9 @@ const Container = styled.div`
 const SliderDiv = styled.div`
   position: relative;
   margin-bottom: 40px;
+  @media (max-width: 750px) {
+    margin-top: 100px;
+  }
 `;
 const SaveBtnDiv = styled.div`
   display: flex;
