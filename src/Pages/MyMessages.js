@@ -296,15 +296,16 @@ const Chat = styled.div`
 const ChatDiv = styled.div`
   display: flex;
   flex-direction: column;
-  height: 85%;
+  height: 25%;
   @media (max-width: 800px) {
     min-width: 90vw;
+    height: 85%;
   }
 `;
 const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  height: 45vh;
   overflow-y: auto;
   /* margin-left: -25px; */
   scroll-behavior: smooth;

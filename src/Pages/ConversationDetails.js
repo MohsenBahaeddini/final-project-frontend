@@ -78,7 +78,9 @@ const Div2 = styled.div`
   justify-content: center;
   padding-left: 15px;
   @media (max-width: 420px) {
-    margin-top: 20px;
+    margin-top: 15px;
+    padding-left: 0;
+    margin-bottom: 20px;
   }
 `;
 const Div3 = styled.div`
@@ -133,7 +135,7 @@ const Span = styled.span`
 `;
 
 const H2 = styled.h2`
-  padding-top: 20px;
+  padding-top: 10px;
   color: #fff;
 `;
 const H3 = styled.h3`

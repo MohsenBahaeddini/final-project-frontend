@@ -99,6 +99,11 @@ const Wrapper = styled.div`
 const Div1 = styled.div`
   display: flex;
   margin: 10px 0 10px -10px;
+  @media (max-width: 420px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   /* overflow: hidden;
   overflow-y: scroll; */
@@ -107,6 +112,9 @@ const Div2 = styled.div`
   margin: 20px 20px 20px 0px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 420px) {
+    margin: 10px 10px 20px 10px;
+  }
 `;
 const Button = styled.button`
   cursor: pointer;

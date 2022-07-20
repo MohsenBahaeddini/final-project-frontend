@@ -352,10 +352,10 @@ const Container = styled.div`
 `;
 const SliderDiv = styled.div`
   position: relative;
-  margin-bottom: 40px;
-
+  margin-right: 20px;
   @media (max-width: 1300px) {
-    /* margin-top: 200px; */
+    margin-bottom: 40px;
+    margin-right: 0px;
   }
 `;
 const SaveBtnDiv = styled.div`
