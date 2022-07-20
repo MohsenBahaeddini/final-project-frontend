@@ -253,7 +253,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px 40px;
-  height: 70vh;
+  /* height: 70vh; */
   height: 85vh;
   @media (max-width: 800px) {
     flex-direction: column;
@@ -267,8 +267,8 @@ const Preview = styled.div`
   border-radius: 10px;
   background: var(--color-darkGrey);
   margin: 10px;
-  min-width: calc(100vw / 8);
-  max-width: calc(100vw / 3);
+  /* min-width: calc(100vw / 8);
+  max-width: calc(100vw / 3); */
   /* min-height: 600px; */
   height: 550px;
   width: 200px;
@@ -346,6 +346,7 @@ const Div = styled.div`
   @media (max-width: 800px) {
     width: 90vw;
     display: block;
+    min-height: 600px;
     height: auto;
     /* margin: 10px; */
     margin: auto;

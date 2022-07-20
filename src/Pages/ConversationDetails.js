@@ -62,7 +62,7 @@ const Wrapper = styled.div`
 `;
 const Div = styled.div`
   display: flex;
-  margin-top: -10px;
+  margin-top: -16px;
 
   justify-content: center;
   margin-bottom: 30px;
@@ -79,13 +79,13 @@ const Div3 = styled.div`
 
   flex-direction: column;
   justify-content: center;
-  padding-left: 15px;
-  margin-top: 15px;
+  /* padding-left: 15px; */
+  /* margin-top: 15px; */
 `;
 const Img = styled.img`
   width: 200px;
   height: 130px;
-  margin: 5px 20px -5px 20px;
+  margin: 0px 20px -5px 20px;
   padding: 2px;
   border: 1px solid var(--color-blue);
   border-radius: 10px;
