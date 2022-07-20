@@ -19,12 +19,15 @@ const SingleConversation = () => {
 
   // Get a specific conversation by id
   useEffect(() => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setConversation(response.conversation);
@@ -38,12 +41,15 @@ const SingleConversation = () => {
 
   // refetch to re-render the conversation after a new message has been sent
   const handleAfterSendMsg = () => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setConversation(response.conversation);
@@ -182,20 +188,21 @@ const SingleConversation = () => {
   );
 };
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background-color: var(--color-darkGrey);
   border: 1px solid #fff;
   border-radius: 10px;
   margin: 40px 40px 40px calc(100vw / 3.7);
   padding: 20px;
-  max-width: 600px;
-
-  height: 78vh;
+  /* max-width: 600px; */
+  width: 60vw;
+  margin: auto;
+  height: 550px;
+  min-height: 500px;
+  margin-top: 40px;
 `;
 const Title = styled.h1`
-  padding: 10px 10px 0 10px;
+  padding: 20px 10px 0 10px;
   margin-bottom: 10px;
   color: #fff;
 `;
@@ -208,7 +215,7 @@ const Seller = styled.h1`
 const Chat = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   padding: 10px 10px -10px 10px;
   margin-bottom: 20px;
   border-bottom: 1px solid var(--color-blue);
@@ -237,6 +244,7 @@ const ChatContainer2 = styled.div`
   scrollbar-width: thin;
   scroll-behavior: smooth; */
   overflow-y: hidden;
+  height: 310px;
 `;
 const ChatContainer = styled.div`
   display: flex;
@@ -363,27 +371,25 @@ const Date = styled.h2`
 const Div3 = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: -15px -20px 10px -20px;
+  height: 50vh;
+  overflow-y: auto;
 `;
 
 const TextArea = styled.textarea`
   padding: 10px 10px 40px 10px;
   margin: 20px;
-  min-width: 550px;
   font-size: 14px;
+  border-radius: 5px;
 `;
 const Button = styled.button`
   cursor: pointer;
-  color: #fff;
-  /* color: var(--color-darkGrey); */
+  color: var(--color-dark-blue);
+  font-weight: bold;
   padding: 3px 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 16px;
   margin: -18px 20px 20px 20px;
-  background-color: var(--color-dark-blue);
-  /* background-color: #fff; */
-
+  background-color: #fff;
   border: none;
 `;
 export default SingleConversation;
