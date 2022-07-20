@@ -50,7 +50,7 @@ const Profile = () => {
   );
 };
 const Wrapper = styled.div`
-   display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, 370px);
   justify-content: flex-start;
   gap: 5%;
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   @media (max-width: 1350px) {
     justify-content: space-evenly;
     align-items: center;
-    margin: 20px 50px 20px 0px;
+    margin: 20px 50px 50px 0px;
   }
   @media (max-width: 420px) {
     margin-left: 70px;
