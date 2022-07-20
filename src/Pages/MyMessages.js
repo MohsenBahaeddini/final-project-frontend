@@ -25,12 +25,15 @@ const MyMessages = () => {
 
   // get the messages that owner has received for a specific ad
   useEffect(() => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversations-by-ad/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversations-by-ad/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setMyConversations(response.conversations);
@@ -44,12 +47,15 @@ const MyMessages = () => {
 
   // Get conversation by id
   useEffect(() => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setChat(response.conversation);
@@ -63,12 +69,15 @@ const MyMessages = () => {
 
   // re-fetch messages once the new msg has been sent and dispaly on screen
   const handleAfterSendMsg = () => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${chatId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setChat(response.conversation);
@@ -91,27 +100,30 @@ const MyMessages = () => {
     <>
       <Wrapper>
         <Preview>
-          <Title>My Chats</Title>
+          <Title1>Chats</Title1>
 
-          <h5>
+          <EmailDiv>
             {status === "idle" &&
               myConversations.map((conversation, index) => {
                 return (
                   <Chat key={index}>
                     <Email
                       id={conversation.id}
-                      className={
-                        active === conversation.id ? "inactive" : "active"
-                      }
+                      // className={
+                      //   active === conversation.id ? "inactive" : "active"
+                      // }
                       onClick={(ev) => {
                         console.log(ev);
                         ev.preventDefault();
-                        fetch(`https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${conversation._id}`, {
-                          headers: {
-                            "Content-Type": "application/json",
-                            Accept: "application/json",
-                          },
-                        })
+                        fetch(
+                          `https://auto-explorer-backend.herokuapp.com/api/conversation-by-id/${conversation._id}`,
+                          {
+                            headers: {
+                              "Content-Type": "application/json",
+                              Accept: "application/json",
+                            },
+                          }
+                        )
                           .then((res) => res.json())
                           .then((response) => {
                             setChat(response.conversation);
@@ -126,7 +138,7 @@ const MyMessages = () => {
                   </Chat>
                 );
               })}
-          </h5>
+          </EmailDiv>
         </Preview>
 
         <Div>
@@ -134,55 +146,59 @@ const MyMessages = () => {
 
           {chatStatus === "idle" && chat && (
             <>
-              <ChatContainer>
-                {chat.messages.map((message, index) => {
-                  console.log(message);
-                  return (
-                    <>
-                      <Div4
-                        key={index}
-                        className={message.user === chat.buyer ? "buyer" : "me"}
-                      >
-                        <Div5
+              <ChatDiv>
+                <ChatContainer>
+                  {chat.messages.map((message, index) => {
+                    console.log(message);
+                    return (
+                      <>
+                        <Div4
+                          key={index}
                           className={
                             message.user === chat.buyer ? "buyer" : "me"
                           }
                         >
-                          <Body
+                          <Div5
                             className={
                               message.user === chat.buyer ? "buyer" : "me"
                             }
                           >
-                            {message.body}
-                          </Body>
-                          <Date
-                            className={
-                              message.user === chat.buyer ? "buyer" : "me"
-                            }
-                          >
-                            {message.date}
-                          </Date>
-                          <Bubble>
-                            {message.user === chat.buyer && <MsgSent />}
-                          </Bubble>
-                          <BubbleSent>
-                            {message.user !== chat.buyer && <MsgReceived />}
-                          </BubbleSent>
-                        </Div5>
-                        {message.user === chat.buyer && (
-                          <User
-                            className={
-                              message.user === chat.buyer ? "buyer" : "me"
-                            }
-                          >
-                            {message.user.split("@", 1)}
-                          </User>
-                        )}
-                      </Div4>
-                    </>
-                  );
-                })}
-              </ChatContainer>
+                            <Body
+                              className={
+                                message.user === chat.buyer ? "buyer" : "me"
+                              }
+                            >
+                              {message.body}
+                            </Body>
+                            <Date
+                              className={
+                                message.user === chat.buyer ? "buyer" : "me"
+                              }
+                            >
+                              {message.date}
+                            </Date>
+                            <Bubble>
+                              {message.user === chat.buyer && <MsgSent />}
+                            </Bubble>
+                            <BubbleSent>
+                              {message.user !== chat.buyer && <MsgReceived />}
+                            </BubbleSent>
+                          </Div5>
+                          {message.user === chat.buyer && (
+                            <User
+                              className={
+                                message.user === chat.buyer ? "buyer" : "me"
+                              }
+                            >
+                              {message.user.split("@", 1)}
+                            </User>
+                          )}
+                        </Div4>
+                      </>
+                    );
+                  })}
+                </ChatContainer>
+              </ChatDiv>
               <Div6>
                 <TextArea
                   type="text"
@@ -195,20 +211,23 @@ const MyMessages = () => {
                     ev.preventDefault();
 
                     if (msg) {
-                      fetch(`https://auto-explorer-backend.herokuapp.com/api/update-conversation/${chat._id}`, {
-                        method: "PATCH",
-                        headers: {
-                          "Content-Type": "application/json",
-                          Accept: "application/json",
-                        },
-                        body: JSON.stringify({
-                          messages: {
-                            user: currentUser.email,
-                            body: msg,
-                            date: moment().format("h:mm A - MMMM Do, YYYY"),
+                      fetch(
+                        `https://auto-explorer-backend.herokuapp.com/api/update-conversation/${chat._id}`,
+                        {
+                          method: "PATCH",
+                          headers: {
+                            "Content-Type": "application/json",
+                            Accept: "application/json",
                           },
-                        }),
-                      })
+                          body: JSON.stringify({
+                            messages: {
+                              user: currentUser.email,
+                              body: msg,
+                              date: moment().format("h:mm A - MMMM Do, YYYY"),
+                            },
+                          }),
+                        }
+                      )
                         .then((res) => res.json())
                         .then((response) => {
                           if (response) {
@@ -235,6 +254,12 @@ const Wrapper = styled.div`
   justify-content: center;
   margin: 20px 40px;
   height: 70vh;
+  height: 85vh;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: 70%;
+    margin: 30px 40px 30px 20px;
+  }
 `;
 
 const Preview = styled.div`
@@ -246,11 +271,35 @@ const Preview = styled.div`
   max-width: calc(100vw / 3);
   /* min-height: 600px; */
   height: 550px;
+  width: 200px;
+  /* min-height: 600px; */
+  height: 80vh;
+  @media (max-width: 800px) {
+    width: 90vw;
+    display: block;
+    margin: auto;
+    height: 10%;
+    overflow-x: auto;
+  }
+`;
+const EmailDiv = styled.div`
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: left;
+  }
 `;
 const Chat = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+`;
+const ChatDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 85%;
+  @media (max-width: 800px) {
+    width: 90vw;
+  }
 `;
 const ChatContainer = styled.div`
   display: flex;
@@ -259,7 +308,11 @@ const ChatContainer = styled.div`
   overflow-y: auto;
   /* margin-left: -25px; */
   scroll-behavior: smooth;
-  width: calc(100vw / 2.82);
+
+  width: 69vw;
+  @media (max-width: 800px) {
+    width: 90vw;
+  }
   &::-webkit-scrollbar {
     width: 10px;
   }
@@ -286,12 +339,18 @@ const Div = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   background: var(--color-darkGrey);
-  min-width: calc(100vw / 3);
-  width: calc(100vw / 2.7);
-  max-width: calc(100vw / 2.7);
+  width: 70vw;
   /* min-height: 550px; */
-  height: 550px;
+  height: 80vh;
   margin: 10px;
+  @media (max-width: 800px) {
+    width: 90vw;
+    display: block;
+    /* height: 80vh; */
+    /* margin: 10px; */
+    margin: auto;
+    margin-top: 20px;
+  }
 `;
 const Div4 = styled.div`
   display: flex;
@@ -397,14 +456,27 @@ const Title = styled.h2`
   font-size: 18px;
   color: #fff;
 `;
+const Title1 = styled.h2`
+  border-bottom: 1px solid var(--color-blue);
+  padding: 5px 5px 10px 5px;
+  margin: 20px;
+  text-align: left;
+  font-size: 18px;
+  color: #fff;
+  @media (max-width: 800px) {
+    margin: 10px 10px -10px 10px;
+  }
+`;
 const Button = styled.button`
   cursor: pointer;
-  color: #fff;
+  color: var(--color-dark-blue);
   padding: 3px 20px;
   font-size: 16px;
   margin: -15px 20px 20px 20px;
-  background-color: var(--color-dark-blue);
+  background-color: #fff;
   border: none;
+  font-weight: bold;
+  border-radius: 5px;
 `;
 const Email = styled.button`
   cursor: pointer;
@@ -417,12 +489,13 @@ const Email = styled.button`
 
   &:hover {
     color: var(--color-blue);
-    font-size: 16px;
   }
 
   &:focus {
     color: var(--color-yellow);
-    font-size: 16px;
+  }
+  &:active {
+    color: var(--color-yellow);
   }
 `;
 const TextArea = styled.textarea`
