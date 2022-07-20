@@ -324,7 +324,7 @@ const AdDetails = () => {
 const Wrapper = styled.div`
   display: flex;
   margin: 80px;
-  max-height: 500px;
+  /* max-height: 500px; */
   @media (max-width: 1300px) {
     flex-direction: column;
     justify-content: center;
@@ -355,7 +355,7 @@ const SliderDiv = styled.div`
   margin-bottom: 40px;
 
   @media (max-width: 1300px) {
-    margin-top: 200px;
+    /* margin-top: 200px; */
   }
 `;
 const SaveBtnDiv = styled.div`
