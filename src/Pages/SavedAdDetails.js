@@ -63,9 +63,12 @@ const SavedAdDetails = ({ adId, userId, updateMySavedAdsAfterDelete }) => {
               <Button
                 onClick={(ev) => {
                   ev.preventDefault();
-                  fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${savedAd._id}`, {
-                    method: "DELETE",
-                  })
+                  fetch(
+                    `https://auto-explorer-backend.herokuapp.com/api/delete-saved-ad/${savedAd._id}`,
+                    {
+                      method: "DELETE",
+                    }
+                  )
                     .then((res) => res.json())
                     .then((response) => {
                       console.log(response);
@@ -170,6 +173,10 @@ const Img = styled.img`
   border-radius: 10px;
   &:hover {
     transform: scale(1.02);
+  }
+  @media (max-width: 420px) {
+    width: 280px;
+    height: 210px;
   }
 `;
 export default SavedAdDetails;

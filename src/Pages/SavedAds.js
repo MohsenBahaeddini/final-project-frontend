@@ -98,9 +98,11 @@ const Wrapper = styled.div`
   height: fit-content;
   background: var(--color-darkGrey);
   padding-bottom: 5px;
+  max-height: 450px;
   @media (max-width: 420px) {
     min-width: 330px;
     width: 330px;
+    margin-bottom: 40px;
   }
   overflow-x: hidden;
   overflow-y: auto;

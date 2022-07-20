@@ -125,7 +125,7 @@ const Wrapper = styled.div`
   margin: 10px;
   min-height: 250px;
   height: fit-content;
-  max-height: 550px;
+  max-height: 450px;
   /* overflow: hidden; */
 
   padding-bottom: 5px;
@@ -169,6 +169,11 @@ const Div1 = styled.div`
   margin-bottom: 20px;
   /* overflow: hidden;
   overflow-y: scroll; */
+  @media (max-width: 420px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Div2 = styled.div`
   margin: 20px 20px 20px 0px;
@@ -197,6 +202,10 @@ const Img = styled.img`
   border-radius: 10px;
   &:hover {
     transform: scale(1.02);
+  }
+  @media (max-width: 420px) {
+    width: 280px;
+    height: 210px;
   }
 `;
 const StyledNavLink = styled(NavLink)`

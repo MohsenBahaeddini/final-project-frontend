@@ -66,6 +66,10 @@ const Div = styled.div`
 
   justify-content: center;
   margin-bottom: 30px;
+  @media (max-width: 420px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `;
 const Div2 = styled.div`
   display: flex;
@@ -73,6 +77,9 @@ const Div2 = styled.div`
   align-items: center;
   justify-content: center;
   padding-left: 15px;
+  @media (max-width: 420px) {
+    margin-top: 20px;
+  }
 `;
 const Div3 = styled.div`
   display: flex;
@@ -91,6 +98,10 @@ const Img = styled.img`
   border-radius: 10px;
   &:hover {
     transform: scale(1.02);
+  }
+  @media (max-width: 420px) {
+    width: 280px;
+    height: 210px;
   }
 `;
 const Title = styled.h2`
