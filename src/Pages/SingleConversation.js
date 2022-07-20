@@ -76,7 +76,7 @@ const SingleConversation = () => {
         <>
           <Container>
             <Chat>
-              <Title>My Chat with</Title>
+              <Title>Chat with</Title>
               <Seller> {conversation.seller.split("@", 1)}</Seller>
             </Chat>
             <ChatContainer2>
@@ -155,20 +155,23 @@ const SingleConversation = () => {
                   ev.preventDefault();
 
                   if (msg) {
-                    fetch(`https://auto-explorer-backend.herokuapp.com/api/update-conversation/${conversation._id}`, {
-                      method: "PATCH",
-                      headers: {
-                        "Content-Type": "application/json",
-                        Accept: "application/json",
-                      },
-                      body: JSON.stringify({
-                        messages: {
-                          user: currentUser.email,
-                          body: msg,
-                          date: moment().format("h:mm A - MMMM Do, YYYY"),
+                    fetch(
+                      `https://auto-explorer-backend.herokuapp.com/api/update-conversation/${conversation._id}`,
+                      {
+                        method: "PATCH",
+                        headers: {
+                          "Content-Type": "application/json",
+                          Accept: "application/json",
                         },
-                      }),
-                    })
+                        body: JSON.stringify({
+                          messages: {
+                            user: currentUser.email,
+                            body: msg,
+                            date: moment().format("h:mm A - MMMM Do, YYYY"),
+                          },
+                        }),
+                      }
+                    )
                       .then((res) => res.json())
                       .then((response) => {
                         if (response) {
@@ -200,6 +203,10 @@ const Wrapper = styled.div`
   height: 550px;
   min-height: 500px;
   margin-top: 40px;
+  overflow-y: hidden;
+  @media (max-width: 600px) {
+    width: 90vw;
+  }
 `;
 const Title = styled.h1`
   padding: 20px 10px 0 10px;
