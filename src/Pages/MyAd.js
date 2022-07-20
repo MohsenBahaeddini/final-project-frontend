@@ -17,12 +17,15 @@ const MyAd = ({ currentUser }) => {
   // Get all my ads
   useEffect(() => {
     setStatus("loading");
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setMyAds(response.ads);
@@ -35,12 +38,15 @@ const MyAd = ({ currentUser }) => {
   }, []);
 
   const updateMyAdsAfterDelete = () => {
-    fetch(`https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    fetch(
+      `https://auto-explorer-backend.herokuapp.com/api/ads-by-owner/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => {
         setMyAds(response.ads);
@@ -82,9 +88,12 @@ const MyAd = ({ currentUser }) => {
                         <Button
                           onClick={(ev) => {
                             ev.preventDefault();
-                            fetch(`https://auto-explorer-backend.herokuapp.com/api/delete-ad/${ad._id}`, {
-                              method: "DELETE",
-                            })
+                            fetch(
+                              `https://auto-explorer-backend.herokuapp.com/api/delete-ad/${ad._id}`,
+                              {
+                                method: "DELETE",
+                              }
+                            )
                               .then((res) => res.json())
                               .then((response) => {
                                 console.log(response);
@@ -192,7 +201,7 @@ const Img = styled.img`
 `;
 const StyledNavLink = styled(NavLink)`
   color: white;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   font-size: 12px;
   text-decoration: none;
   outline: none;

@@ -298,7 +298,7 @@ const ChatDiv = styled.div`
   flex-direction: column;
   height: 85%;
   @media (max-width: 800px) {
-    width: 90vw;
+    min-width: 90vw;
   }
 `;
 const ChatContainer = styled.div`
@@ -346,7 +346,7 @@ const Div = styled.div`
   @media (max-width: 800px) {
     width: 90vw;
     display: block;
-    /* height: 80vh; */
+    height: auto;
     /* margin: 10px; */
     margin: auto;
     margin-top: 20px;
