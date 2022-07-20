@@ -155,7 +155,7 @@ const SingleConversation = () => {
                   ev.preventDefault();
 
                   if (msg) {
-                    fetch(`/api/update-conversation/${conversation._id}`, {
+                    fetch(`https://auto-explorer-backend.herokuapp.com/api/update-conversation/${conversation._id}`, {
                       method: "PATCH",
                       headers: {
                         "Content-Type": "application/json",
