@@ -254,7 +254,7 @@ const Wrapper = styled.div`
   justify-content: center;
   margin: 20px 40px;
   /* height: 70vh; */
-  height: 85vh;
+  /* height: 85vh; */
   @media (max-width: 800px) {
     flex-direction: column;
     height: 70%;
@@ -296,7 +296,7 @@ const Chat = styled.div`
 const ChatDiv = styled.div`
   display: flex;
   flex-direction: column;
-  height: 25%;
+  /* height: 25%; */
   @media (max-width: 800px) {
     min-width: 90vw;
     height: 85%;
@@ -342,7 +342,7 @@ const Div = styled.div`
   background: var(--color-darkGrey);
   width: 70vw;
   /* min-height: 550px; */
-  height: 80vh;
+  /* height: 80vh; */
   margin: 10px;
   @media (max-width: 800px) {
     width: 90vw;
