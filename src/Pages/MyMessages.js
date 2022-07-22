@@ -257,7 +257,7 @@ const Wrapper = styled.div`
   /* height: 85vh; */
   @media (max-width: 800px) {
     flex-direction: column;
-    height: 70%;
+    /* height: 70%; */
     margin: 30px 40px 30px 20px;
   }
 `;
@@ -286,6 +286,7 @@ const EmailDiv = styled.div`
   @media (max-width: 800px) {
     display: flex;
     justify-content: left;
+    padding-bottom: 5px;
   }
 `;
 const Chat = styled.div`
@@ -347,7 +348,7 @@ const Div = styled.div`
   @media (max-width: 800px) {
     width: 90vw;
     display: block;
-    min-height: 600px;
+    /* min-height: 600px; */
     height: auto;
     /* margin: 10px; */
     margin: auto;
