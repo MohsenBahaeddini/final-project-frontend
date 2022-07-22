@@ -270,10 +270,10 @@ const Preview = styled.div`
   /* min-width: calc(100vw / 8);
   max-width: calc(100vw / 3); */
   /* min-height: 600px; */
-  height: 550px;
+  /* height: 550px; */
   width: 200px;
   /* min-height: 600px; */
-  height: 80vh;
+  /* height: 80vh; */
   @media (max-width: 800px) {
     width: 90vw;
     display: block;
