@@ -51,6 +51,7 @@ const Button = styled.button`
   border: none;
   font-size: 16px;
   color: #fff;
+  padding-left: 10px;
   /* width: 0px;
   height: 25px; */
   &:hover {
