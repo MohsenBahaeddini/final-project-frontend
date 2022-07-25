@@ -98,7 +98,7 @@ const Wrapper = styled.div`
   height: fit-content;
   background: var(--color-darkGrey);
   padding-bottom: 5px;
-  max-height: 450px;
+  max-height: 250px;
   @media (max-width: 420px) {
     min-width: 330px;
     width: 330px;

@@ -125,7 +125,7 @@ const Wrapper = styled.div`
   margin: 10px;
   min-height: 250px;
   height: fit-content;
-  max-height: 450px;
+  max-height: 250px;
   /* overflow: hidden; */
 
   padding-bottom: 5px;
