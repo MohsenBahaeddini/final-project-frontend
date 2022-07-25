@@ -250,7 +250,7 @@ const ChatContainer2 = styled.div`
   overflow-y: scroll;
   scrollbar-width: thin;
   scroll-behavior: smooth; */
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   height: 310px;
 `;
 const ChatContainer = styled.div`
