@@ -63,6 +63,7 @@ const Wrapper = styled.div`
 const Div = styled.div`
   display: flex;
   margin-top: -16px;
+  padding-top: 26px;
 
   justify-content: center;
   margin-bottom: 30px;
