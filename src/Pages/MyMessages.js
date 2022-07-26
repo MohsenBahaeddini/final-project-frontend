@@ -486,10 +486,12 @@ const Email = styled.button`
   color: #fff;
   padding: 3px 20px;
   font-size: 16px;
-  margin: 20px 5px 5px 0px;
+  margin: 0px 5px 20px 0px;
   background-color: var(--color-dark-blue);
   border: none;
-
+  @media (max-width: 800px) {
+    margin: 20px 5px 5px 0px;
+  }
   &:hover {
     color: var(--color-blue);
   }
