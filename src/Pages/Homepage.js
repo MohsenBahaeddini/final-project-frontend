@@ -94,94 +94,94 @@ const Homepage = () => {
           <CoverImg src={background} />
         </CoverDiv>
         <MakeItCenterDiv>
-        <Div>
-          <SearchDiv>
-            <H3>Search Cars, Trucks and SUVs</H3>
-          </SearchDiv>
-          <FiltersDiv>
-            <Select
-              name="type"
-              onChange={(ev) => {
-                setType(ev.target.value);
-                handleFilters(ev);
-              }}
-            >
-              <option value={""}>Any Type</option>
-              {types.map((type, index) => {
-                return (
-                  <option value={type} key={index}>
-                    {type}
-                  </option>
-                );
-              })}
-            </Select>
-
-            <Select
-              name="make"
-              onChange={(ev) => {
-                setMake(ev.target.value);
-                handleFilters(ev);
-              }}
-            >
-              <option value={""}>Any Make</option>
-              {makes.map((make, index) => {
-                return (
-                  <>
-                    <option value={make} key={index}>
-                      {make}
-                    </option>
-                  </>
-                );
-              })}
-            </Select>
-
-            <Select
-              name="year"
-              onChange={(ev) => {
-                setYear(ev.target.value);
-                handleFilters(ev);
-              }}
-            >
-              <option value={""}>Any Year</option>
-              {years.map((year, index) => {
-                return (
-                  <option value={year} key={index}>
-                    {year}
-                  </option>
-                );
-              })}
-            </Select>
-
-            <Select
-              name="model"
-              onChange={(ev) => {
-                setModel(ev.target.value);
-                handleFilters(ev);
-              }}
-            >
-              <option value={""}>Any Model</option>
-              {cars.length &&
-                cars.map((car, index) => {
+          <Div>
+            <SearchDiv>
+              <H3>Search Cars, Trucks and SUVs</H3>
+            </SearchDiv>
+            <FiltersDiv>
+              <Select
+                name="type"
+                onChange={(ev) => {
+                  setType(ev.target.value);
+                  handleFilters(ev);
+                }}
+              >
+                <option value={""}>Any Type</option>
+                {types.map((type, index) => {
                   return (
-                    <option value={car.model} key={index}>
-                      {car.model}
+                    <option value={type} key={index}>
+                      {type}
                     </option>
                   );
                 })}
-            </Select>
+              </Select>
 
-            <Select
-              defaultValue={"default"}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              <option value={"default"} disabled>
-                Sort
-              </option>
-              <option value="asc">Price ⬆</option>
-              <option value="desc">Price ⬇</option>
-            </Select>
-          </FiltersDiv>
-        </Div>
+              <Select
+                name="make"
+                onChange={(ev) => {
+                  setMake(ev.target.value);
+                  handleFilters(ev);
+                }}
+              >
+                <option value={""}>Any Make</option>
+                {makes.map((make, index) => {
+                  return (
+                    <>
+                      <option value={make} key={index}>
+                        {make}
+                      </option>
+                    </>
+                  );
+                })}
+              </Select>
+
+              <Select
+                name="year"
+                onChange={(ev) => {
+                  setYear(ev.target.value);
+                  handleFilters(ev);
+                }}
+              >
+                <option value={""}>Any Year</option>
+                {years.map((year, index) => {
+                  return (
+                    <option value={year} key={index}>
+                      {year}
+                    </option>
+                  );
+                })}
+              </Select>
+
+              <Select
+                name="model"
+                onChange={(ev) => {
+                  setModel(ev.target.value);
+                  handleFilters(ev);
+                }}
+              >
+                <option value={""}>Any Model</option>
+                {cars.length &&
+                  cars.map((car, index) => {
+                    return (
+                      <option value={car.model} key={index}>
+                        {car.model}
+                      </option>
+                    );
+                  })}
+              </Select>
+
+              <Select
+                defaultValue={"default"}
+                onChange={(e) => setSort(e.target.value)}
+              >
+                <option value={"default"} disabled>
+                  Sort
+                </option>
+                <option value="asc">Price ⬆</option>
+                <option value="desc">Price ⬇</option>
+              </Select>
+            </FiltersDiv>
+          </Div>
         </MakeItCenterDiv>
         <Section>
           <SmallAd
