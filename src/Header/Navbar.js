@@ -37,9 +37,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  margin: 10px;
+  margin: 2% 10%;
 
-  border-bottom: 1px solid var(--color-blue);
+  /* border-bottom: 1px solid var(--color-blue); */
 `;
 const Container = styled.div`
   text-align: right;
@@ -77,7 +77,7 @@ const Logo = styled.h2`
   font-family: var(--font-heading);
 
   color: #fff;
-  color: var(--color-yellow);
+  /* color: var(--color-yellow); */
   font-size: 22px;
   flex-basis: 33%;
   @media (max-width: 735px) {

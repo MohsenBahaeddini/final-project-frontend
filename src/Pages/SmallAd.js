@@ -125,19 +125,24 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  margin: 30px;
+  margin: 30px auto;
+  max-width: 90%;
+  height: 70%;
 `;
 const FilterErr = styled.h1`
   color: var(--color-yellow);
   padding: 10px;
 `;
-const Main = styled.div``;
+const Main = styled.div`
+  margin-top: 5%;
+`;
 
 const ItemContainer = styled.div`
- display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fit, 315px);
   gap: 50px;
   justify-content: center;
-  margin-top: 50px;`;
+  margin-top: 50px;
+`;
 
 export default SmallAd;

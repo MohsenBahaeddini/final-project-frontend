@@ -56,18 +56,21 @@ const Homepage = () => {
   const addNewUser = async () => {
     if (isAuthenticated) {
       try {
-        await fetch("https://auto-explorer-backend.herokuapp.com/api/new-user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            sub: user.sub,
-            name: user.name,
-            email: user.email,
-          }),
-        })
+        await fetch(
+          "https://auto-explorer-backend.herokuapp.com/api/new-user",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              sub: user.sub,
+              name: user.name,
+              email: user.email,
+            }),
+          }
+        )
           .then((res) => res.json())
           .then((response) => {
             if (response) {
@@ -90,6 +93,7 @@ const Homepage = () => {
         <CoverDiv>
           <CoverImg src={background} />
         </CoverDiv>
+        <MakeItCenterDiv>
         <Div>
           <SearchDiv>
             <H3>Search Cars, Trucks and SUVs</H3>
@@ -178,14 +182,17 @@ const Homepage = () => {
             </Select>
           </FiltersDiv>
         </Div>
-        <SmallAd
-          filters={filters}
-          sort={sort}
-          make={make}
-          year={year}
-          type={type}
-          model={model}
-        />
+        </MakeItCenterDiv>
+        <Section>
+          <SmallAd
+            filters={filters}
+            sort={sort}
+            make={make}
+            year={year}
+            type={type}
+            model={model}
+          />
+        </Section>
       </Wrapper>
     </>
   );
@@ -207,7 +214,8 @@ const CoverDiv = styled.div`
 const CoverImg = styled.img`
   /* width: 600px;
   height: 300px; */
-  background-color: var(--color-dark-blue);@media (max-width: 735px) {
+  background-color: var(--color-dark-blue);
+  @media (max-width: 735px) {
     width: 70vw;
   }
 `;
@@ -220,6 +228,12 @@ const H3 = styled.h3`
   color: var(--color-blue);
   color: #fff;
   font-size: 21px;
+`;
+const MakeItCenterDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -5%;
 `;
 const H4 = styled.h4`
   color: var(--color-yellow);
@@ -235,6 +249,15 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
+  width: fit-content;
+  padding: 0 2%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px 1px darkgrey;
+  @media (max-width: 735px) {
+    max-width: 85%;
+    padding-bottom: 10%;
+  }
 `;
 const SearchDiv = styled.div`
   padding-top: 20px;
@@ -259,16 +282,23 @@ const FiltersDiv = styled.div`
   }
 `;
 const Select = styled.select`
+  border-radius: 5px;
+  border-color: darkgray;
   font-size: 14px;
   padding: 5px 20px;
   margin: 5px;
   cursor: pointer;
+  color: var(--color-dark-blue);
+  font-weight: bold;
   @media (max-width: 735px) {
     font-size: 14px;
     padding: 5px 20px;
     margin: 5px;
     width: 80vw;
   }
+`;
+const Section = styled.section`
+  background-color: #f5f2e4;
 `;
 
 export default Homepage;
