@@ -227,6 +227,7 @@ const CoverTextBox = styled.div`
 const H3 = styled.h3`
   color: var(--color-blue);
   color: #fff;
+  color: black;
   font-size: 21px;
 `;
 const MakeItCenterDiv = styled.div`
